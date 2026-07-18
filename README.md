@@ -1,36 +1,34 @@
-### Hi there 👋
+<div align="center">
 
-I'm **"just a 🍵"** - from **🌎 616**. I'm a low-minded developer **٩◔̯◔۶** 
+<img src="assets/header.svg" alt="JONAS" width="420"/>
 
-> 🌜 *Ein gebildeter Geist ist fokussierte Seele; Kaffee kann nicht mithalten, Wissen spielt die Hauptrolle*
+**`▶ press start... i mean, only if you want to ◀`**
 
-## Tech stacks
+🌜 *Ein gebildeter Geist ist fokussierte Seele; Kaffee kann nicht mithalten, Wissen spielt die Hauptrolle*
 
-### Backend
-[![Backend](https://skillicons.dev/icons?i=java,kotlin,spring,php,laravel,golang,python,fastapi&theme=light)](https://github.com/jonaskahn)
----
-### Frontend
-[![Frontend](https://skillicons.dev/icons?i=html,css,javascript,nodejs,vue,nuxt,dart,flutter&theme=light)](https://github.com/jonaskahn)
----
-### Tools
-[![Tools](https://skillicons.dev/icons?i=linux,maven,jenkins,vite,webpack,gitlab,docker,vscode&theme=light)](https://github.com/jonaskahn)
+<br/>
 
----
+<img src="assets/profile.svg" alt="PLAYER PROFILE" width="720"/>
 
- - **🛫 Java/Kotlin** | _Spring Framework Stacks_
- - **🗻 Php** | _Laravel/Lumen_
- - **🔥 Golang** | _Gin/BeeGo/Fiber/Hyperledger Fabric_
- - **🔦 Python** | _FastAPI/Sanic/Focus/Deep Learning/Machine Learing/AI_
- - **🔆 Html/Css/Javascript**
- - **🔶 NodeJs/Vue/NuxtJs**
- - **🔨 Maven/Ant | NPM | Composer | Anaconda/VirtualEnv/Poetry**
- - **🧩 Jenkins/GitlabCI/Docker/HashiCorpStack (Nomad/Consul/Vault)**
+<img src="assets/skills.svg" alt="SKILL TREE" width="720"/>
 
----
-### Doing/Learning
+<img src="assets/scores.svg" alt="HIGH SCORES" width="720"/>
 
-- Practice more on AI area
+<br/>
+
+## `💾 CONTINUE?`
+
+`[ YES ]` `[ IT'S OK IF NOT ]`
+
+[![Blog](https://img.shields.io/badge/🌐_WORLD_1--1-me.ifelse.one-8B00FF?style=for-the-badge)](https://me.ifelse.one)
+[![GitHub](https://img.shields.io/badge/🎮_PLAYER-jonaskahn-00C800?style=for-the-badge&logo=github)](https://github.com/jonaskahn)
 
 ![](https://komarev.com/ghpvc/?username=jonaskahn&color=green)
 
+**`🪙 insert coin? (no pressure. tea is fine too.)`**
+
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jonaskahn)
+
+<img src="assets/footer.svg" alt="no game over, only respawn" width="720"/>
+
+</div>
