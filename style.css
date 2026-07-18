@@ -113,17 +113,24 @@ a:hover, a:focus-visible{ color:var(--red); border-color:var(--red); }
 
 /* ===================== STACK (timeline, sequenced) ===================== */
 .timeline-row{
-  display:grid; grid-template-columns:60px 160px 1fr; gap:20px; align-items:baseline;
+  display:grid; grid-template-columns:60px 190px 1fr 52px; gap:20px; align-items:baseline;
   padding:22px 0; border-top:1px solid var(--faint);
 }
 .timeline-row:last-child{ border-bottom:1px solid var(--faint); }
 .timeline-row .n{ font-variant-numeric:tabular-nums; font-size:14px; color:var(--red); font-weight:700; }
 .timeline-row .era{ font-weight:800; text-transform:uppercase; font-size:15px; letter-spacing:0.02em; }
 .timeline-row .desc{ font-size:15px; color:var(--dim); }
+.timeline-row .lv{
+  font-variant-numeric:tabular-nums; font-size:13px; font-weight:800; letter-spacing:0.02em;
+  text-align:right; justify-self:end;
+}
+.lv7{ color:#00e676; } .lv6{ color:#40c4ff; } .lv5{ color:#40c4ff; }
+.lv3{ color:#ffd54f; } .lv2{ color:#ff5252; }
 @media (max-width:700px){
-  .timeline-row{ grid-template-columns:32px 1fr; }
+  .timeline-row{ grid-template-columns:32px 1fr auto; }
   .timeline-row .era{ grid-column:2; }
   .timeline-row .desc{ grid-column:2; margin-top:4px; }
+  .timeline-row .lv{ grid-column:3; grid-row:1; }
 }
 .stack-close{ margin-top:32px; font-size:16px; max-width:640px; }
 
