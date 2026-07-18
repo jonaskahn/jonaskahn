@@ -1,0 +1,175 @@
+:root{
+  --black:#0A0A0A;
+  --white:#FFFFFF;
+  --red:#E31B23;
+  --dim:rgba(255,255,255,0.55);
+  --faint:rgba(255,255,255,0.15);
+  --font: "Futura", "Century Gothic", "Helvetica Neue", Arial, sans-serif;
+  --pad: clamp(24px, 6vw, 80px);
+  --maxw: 1180px;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--font);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{ color:var(--white); text-decoration:none; border-bottom:1px solid var(--faint); transition:color .15s, border-color .15s; }
+a:hover, a:focus-visible{ color:var(--red); border-color:var(--red); }
+
+.container{ max-width:var(--maxw); margin:0 auto; padding-left:var(--pad); padding-right:var(--pad); }
+
+.rule{ height:1px; background:var(--faint); width:100%; }
+
+.eyebrow{
+  display:flex; align-items:center; gap:12px;
+  font-size:13px; letter-spacing:0.25em; text-transform:uppercase; font-weight:700;
+  color:var(--white); margin-bottom:28px;
+}
+.eyebrow .mark{ width:7px; height:7px; background:var(--red); flex-shrink:0; }
+
+.section{ padding:96px 0; }
+.section h2{
+  font-size:clamp(36px, 6vw, 64px);
+  font-weight:800; text-transform:uppercase; letter-spacing:-0.01em;
+  line-height:0.98; margin-bottom:28px;
+}
+.lede{ font-size:clamp(18px,2vw,22px); max-width:760px; color:var(--white); opacity:0.9; }
+.body-text{ font-size:16px; max-width:640px; color:var(--dim); margin-top:16px; }
+
+/* scroll reveal */
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease-out, transform .6s ease-out; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+}
+
+/* ===================== HERO ===================== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.hero-top, .hero-bottom{
+  position:absolute; left:0; right:0; padding:0 var(--pad);
+}
+.hero-top{ top:clamp(28px,5vh,64px); display:flex; justify-content:space-between; align-items:flex-start; }
+.guild .mark-txt{ font-size:13px; font-weight:800; letter-spacing:0.3em; text-transform:uppercase; }
+.guild .sub{ margin-top:8px; font-size:12px; letter-spacing:0.06em; opacity:0.75; }
+.timer-block{ text-align:right; }
+.timer-label{ font-size:11px; letter-spacing:0.3em; text-transform:uppercase; opacity:0.75; margin-bottom:8px; }
+.timer{ font-variant-numeric:tabular-nums; font-size:clamp(20px,2.4vw,32px); font-weight:700; letter-spacing:0.05em; }
+
+.hero-main{
+  position:relative;
+  padding:0 var(--pad);
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  align-items:center;
+  gap:32px;
+}
+.hero h1{
+  font-size:clamp(56px, 10vw, 160px);
+  font-weight:800; line-height:0.86; letter-spacing:-0.01em; text-transform:uppercase;
+}
+.accent-tick{ height:2px; background:var(--red); width:0%; margin-top:24px; animation:tick-grow 3s ease-out forwards; animation-delay:.4s; }
+@keyframes tick-grow{ from{width:0%;} to{width:100%;} }
+.hero .tagline{ margin-top:20px; font-size:clamp(16px,1.6vw,20px); max-width:520px; opacity:0.9; }
+
+.orbit{ position:relative; width:min(46vw, 520px); height:min(46vw, 520px); margin:0 auto; }
+.ring-svg{ position:absolute; inset:0; width:100%; height:100%; animation:spin 40s linear infinite; }
+@keyframes spin{ from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+.globe-svg{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:60%; height:60%; }
+.globe-svg .meridian{ animation:meridian-sweep 12s linear infinite; }
+@keyframes meridian-sweep{
+  0%{rx:0; opacity:0;} 2%{opacity:1;} 50%{rx:100; opacity:1;} 98%{opacity:1;} 100%{rx:0; opacity:0;}
+}
+@media (prefers-reduced-motion: reduce){
+  .ring-svg, .globe-svg .meridian, .accent-tick{ animation-play-state:paused !important; animation-delay:0s !important; }
+  .accent-tick{ width:100%; }
+}
+
+.scroll-cue{
+  position:absolute; bottom:clamp(20px,4vh,40px); left:0; right:0; text-align:center;
+  font-size:11px; letter-spacing:0.3em; text-transform:uppercase; opacity:0.35;
+}
+
+@media (max-width:900px){
+  .hero-main{ grid-template-columns:1fr; }
+  .orbit{ width:min(70vw,380px); height:min(70vw,380px); margin-top:40px; }
+  .hero-top{ position:relative; top:0; padding:clamp(20px,5vh,40px) var(--pad) 0; }
+  .hero{ padding-top:20px; }
+}
+
+/* ===================== STACK (timeline, sequenced) ===================== */
+.timeline-row{
+  display:grid; grid-template-columns:60px 160px 1fr; gap:20px; align-items:baseline;
+  padding:22px 0; border-top:1px solid var(--faint);
+}
+.timeline-row:last-child{ border-bottom:1px solid var(--faint); }
+.timeline-row .n{ font-variant-numeric:tabular-nums; font-size:14px; color:var(--red); font-weight:700; }
+.timeline-row .era{ font-weight:800; text-transform:uppercase; font-size:15px; letter-spacing:0.02em; }
+.timeline-row .desc{ font-size:15px; color:var(--dim); }
+@media (max-width:700px){
+  .timeline-row{ grid-template-columns:32px 1fr; }
+  .timeline-row .era{ grid-column:2; }
+  .timeline-row .desc{ grid-column:2; margin-top:4px; }
+}
+.stack-close{ margin-top:32px; font-size:16px; max-width:640px; }
+
+/* ===================== PROJECTS ===================== */
+.proj-row{
+  display:grid; grid-template-columns:60px 1fr; gap:20px;
+  padding:32px 0; border-top:1px solid var(--faint);
+}
+.proj-row:last-of-type{ border-bottom:1px solid var(--faint); }
+.proj-row .n{ font-variant-numeric:tabular-nums; font-size:14px; color:var(--red); font-weight:700; }
+.proj-row h3{ font-size:clamp(20px,2.4vw,26px); font-weight:800; text-transform:uppercase; margin-bottom:8px; letter-spacing:0.01em; }
+.proj-row h3 a{ border-bottom:none; }
+.proj-row p{ font-size:15.5px; color:var(--dim); max-width:660px; }
+.proj-links{ margin-top:10px; display:flex; gap:16px; flex-wrap:wrap; font-size:13px; }
+.proj-note{ margin-top:32px; font-size:14px; color:var(--dim); }
+
+/* ===================== PRINCIPLES ===================== */
+.principles{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--faint); margin-top:8px; }
+.principle{ background:var(--black); padding:32px 28px; }
+.principle .label{ font-size:13px; letter-spacing:0.15em; text-transform:uppercase; font-weight:800; color:var(--red); margin-bottom:12px; }
+.principle p{ font-size:15px; color:var(--dim); }
+@media (max-width:900px){ .principles{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .principles{ grid-template-columns:1fr; } }
+
+/* ===================== NOW ===================== */
+.now-list{ margin-top:8px; }
+.now-row{ display:grid; grid-template-columns:220px 1fr; gap:20px; padding:20px 0; border-top:1px solid var(--faint); }
+.now-row:last-child{ border-bottom:1px solid var(--faint); }
+.now-row .k{ font-weight:800; text-transform:uppercase; font-size:14px; letter-spacing:0.05em; }
+.now-row .v{ font-size:15px; color:var(--dim); }
+@media (max-width:700px){ .now-row{ grid-template-columns:1fr; gap:6px; } }
+
+/* ===================== WORKING STYLE ===================== */
+.ledger{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--faint); margin-top:8px; }
+.ledger-item{ background:var(--black); padding:24px 26px; display:flex; gap:18px; }
+.ledger-item .k{ min-width:120px; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; font-weight:800; opacity:0.6; }
+.ledger-item .v{ font-size:15px; color:var(--dim); }
+@media (max-width:700px){ .ledger{ grid-template-columns:1fr; } .ledger-item{ flex-direction:column; gap:6px; } }
+
+/* ===================== WRITING ===================== */
+.writing-box{ margin-top:8px; padding:36px; border:1px solid var(--faint); }
+.writing-box p{ font-size:16px; color:var(--dim); max-width:600px; }
+.writing-box a{ font-size:16px; }
+
+/* ===================== CONTACT / FOOTER ===================== */
+.footer{ padding:80px 0 48px; }
+.footer-links{ display:flex; flex-wrap:wrap; gap:14px 36px; font-size:15px; margin-bottom:56px; }
+.footer-quote{ font-size:14px; color:var(--dim); margin-bottom:24px; }
+.footer-copy{ font-size:12px; letter-spacing:0.05em; color:var(--dim); }
