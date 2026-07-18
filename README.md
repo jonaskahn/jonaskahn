@@ -49,6 +49,6 @@ This repo also hosts the personal site → **[jonaskahn.github.io/jonaskahn](htt
 | `style.css` | all styles — black/white/red, Futura, scroll reveals |
 | `script.js` | session uptime timer + IntersectionObserver reveals |
 | `robots.txt` / `sitemap.xml` | crawler directives + sitemap |
-| `.github/workflows/deploy-pages.yml` | CI — builds & deploys to `gh-pages` branch on every push to `main` |
+| `.github/workflows/deploy-pages.yml` | CI — builds & deploys to GitHub Pages on every push to `main` |
 
-**Deploy flow:** push to `main` → GitHub Actions copies site files to `dist/` → publishes orphan commit to `gh-pages` → GitHub Pages serves it.
+**Deploy flow:** push to `main` → GitHub Actions copies site files to `dist/` → uploads Pages artifact → `actions/deploy-pages` publishes it. No `gh-pages` branch needed.
