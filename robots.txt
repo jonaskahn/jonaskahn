@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jonaskahn.github.io/jonaskahn/sitemap.xml
