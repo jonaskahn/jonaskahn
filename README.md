@@ -1,4 +1,4 @@
-# jonas kahn
+# jonas kahn ![](https://komarev.com/ghpvc/?username=jonaskahn)
 
 software engineer. builds AI systems and the plumbing around them —
 agents, RAG pipelines, orchestration.
