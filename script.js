@@ -18,7 +18,7 @@
       <p class="rule">─────────────</p>
       <p>builds AI systems and the plumbing around them:<br>agents, RAG pipelines, orchestration.</p>
       <p class="dim">backend roots in java, kotlin, spring. today mostly python,<br>typescript, and whatever the plumbing needs.</p>
-      <p class="links"><a href="https://me.ifelse.one" target="_blank" rel="noopener">blog</a> · <a href="https://github.com/jonaskahn" target="_blank" rel="noopener">github</a></p>`,
+      <p class="links"><a href="https://me.ifelse.one" target="_blank" rel="noopener">blog</a> · <a href="https://github.com/jonaskahn" target="_blank" rel="noopener">github</a> · <a href="resume.html">cv</a></p>`,
     projects: () => `
       <ul class="list">
         <li><a href="https://github.com/jonaskahn/asktube" target="_blank" rel="noopener">asktube/</a><span>youtube summarizer and QA with RAG — runs fully local</span></li>
@@ -47,6 +47,7 @@
         <li><span class="n">projects</span><span>things built and shipped</span></li>
         <li><span class="n">stack</span><span>languages, tools, focus</span></li>
         <li><span class="n">contact</span><span>where to find me</span></li>
+        <li><span class="n">cv</span><span>full resume</span></li>
         <li><span class="n">auto</span><span>resume the automatic tour</span></li>
         <li><span class="n">clear</span><span>clear the screen</span></li>
       </ul>`,
@@ -112,6 +113,7 @@
     if (!raw) return;
     input.value = '';
     const key = raw.toLowerCase().split(/\s+/)[0];
+    if (key === 'cv') { window.location.href = 'resume.html'; return; }
     if (key === 'auto') { resumeAuto(); return; }
     if (key === ':q!' || key === 'exit' || key === 'quit') {
       pauseAuto();
@@ -142,7 +144,7 @@
 
   // typing anything pauses the tour — user takes over.
   // Tab completes command names from the suggestion list.
-  const CMDS = ['whoami', 'projects', 'stack', 'contact', 'help', 'auto', 'clear'];
+  const CMDS = ['whoami', 'projects', 'stack', 'contact', 'cv', 'help', 'auto', 'clear'];
   input.addEventListener('keydown', (e) => {
     if (e.key.length === 1 || e.key === 'Backspace' || e.key === 'Enter') pauseAuto();
     if (e.key === 'Tab') {
